@@ -51,7 +51,7 @@ directory <build-dir>. The build directory configuration is unchanged.
 Supported machines: `echo; ls sources/*/conf/machine/*.conf \
 | sed s/\.conf//g | sed -r 's/^.+\///' | xargs -I% echo -e "\t%"`
 
-Available ST's distros: `echo; ls sources/poky/meta-poky/conf/distro/*.conf \
+Available ST's distros: `echo; ls sources/meta-st-openstlinux/conf/distro/*.conf \
 | sed s/\.conf//g | sed -r 's/^.+\///' | xargs -I% echo -e "\t%"`
 
 Examples:
