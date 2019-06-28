@@ -13,6 +13,6 @@ call:
 
 After this step, you need to add this row to your conf/local.conf:
 
-`ACCEPT_EULA_stm32mp1-disco = "1"`
+`ACCEPT_EULA_<MACHINE> = "1"`
 
 Then you will be with everything need for build an image.
