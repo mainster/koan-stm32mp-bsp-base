@@ -192,11 +192,11 @@ For more information about OpenEmbedded see their website:
 You can now run 'bitbake <target>'
 
 Common targets are:
+    st-image-core
+    st-image-weston
     core-image-minimal
     meta-toolchain
-    meta-toolchain-sdk
-    adt-installer
-    meta-ide-support
+    meta-toolchain-qt5
 
 EOF
 
