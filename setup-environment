@@ -173,6 +173,15 @@ EOF
         fi
     done
 
+    # Add Accept Eula to generated local.conf   
+    # 27-06-2020 manuel.delbasso@gmail.com
+    if [[ $ACCEPT_EULA == @(y|Y|yes|YES) ]]; then 
+      sed -i '/CONF_VERSION.*/a \
+ACCEPT_EULA_stm32mp1-disco = "1" \
+ACCEPT_EULA_stm32mp1-eval = "1" \
+ACCEPT_EULA_stm32mp1 = "1"' conf/local.conf
+    fi
+
     generated_config=1
 fi
 
