@@ -44,14 +44,14 @@ the script prepares the calling shell for running bitbake on the build
 directory <build-dir>. The build directory configuration is unchanged.
 "
 
-    ls sources/*/conf/machine/*.conf > /dev/null 2>&1
-    ls sources/meta-st-openstlinux/conf/distro/*.conf > /dev/null 2>&1
+    ls layers/*/conf/machine/*.conf > /dev/null 2>&1
+    ls layers/meta-st-openstlinux/conf/distro/*.conf > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo -e "
-Supported machines: `echo; ls sources/*/conf/machine/*.conf \
+Supported machines: `echo; ls layers/*/conf/machine/*.conf \
 | sed s/\.conf//g | sed -r 's/^.+\///' | xargs -I% echo -e "\t%"`
 
-Available ST's distros: `echo; ls sources/meta-st-openstlinux/conf/distro/*.conf \
+Available ST's distros: `echo; ls layers/meta-st-openstlinux/conf/distro/*.conf \
 | sed s/\.conf//g | sed -r 's/^.+\///' | xargs -I% echo -e "\t%"`
 
 Examples:
@@ -129,9 +129,9 @@ if [ "$build_dir_setup_enabled" = "true" ] && [ -z "$DISTRO" ]; then
     return 1
 fi
 
-OEROOT=$PWD/sources/poky
-if [ -e $PWD/sources/oe-core ]; then
-    OEROOT=$PWD/sources/oe-core
+OEROOT=$PWD/layers/poky
+if [ -e $PWD/layers/oe-core ]; then
+    OEROOT=$PWD/layers/oe-core
 fi
 
 . $OEROOT/oe-init-build-env $CWD/$1 > /dev/null
@@ -150,7 +150,7 @@ if [ "$build_dir_setup_enabled" = "true" ]; then
     mv conf/local.conf conf/local.conf.sample
 
     # Generate the local.conf based on the Yocto defaults
-    TEMPLATES=$CWD/sources/base/conf 
+    TEMPLATES=$CWD/layers/base/conf 
     grep -v '^#\|^$' conf/local.conf.sample > conf/local.conf
     cat >> conf/local.conf <<EOF
 
