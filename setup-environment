@@ -181,7 +181,6 @@ ACCEPT_EULA_stm32mp1-disco = "1" \
 ACCEPT_EULA_stm32mp1-eval = "1" \
 ACCEPT_EULA_stm32mp1 = "1"' conf/local.conf
     fi
-
     generated_config=1
 fi
 
