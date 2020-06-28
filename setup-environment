@@ -183,7 +183,7 @@ ACCEPT_EULA_stm32mp1 = "1"' conf/local.conf
     fi
 
     # Remove empty lines from local.conf 
-    sed -ir '/^\s*$/d' conf/local.conf
+    sed -i -r '/^\s*$/d' conf/local.conf
 
     generated_config=1
 fi
